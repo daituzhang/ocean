@@ -1,0 +1,70 @@
+// bower:scss
+// endbower
+
+@import "reset";
+@import "mixin";
+body {
+  background: #fafafa;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333;
+}
+.top {
+  width: 100%;
+  background-color: #17ACC4;
+  height: 100vh;
+}
+.sun {
+  position: absolute;
+  top: -150px;
+  width: 600px;
+  height: 300px;
+  @include center-x;
+  background-image: radial-gradient(circle 150px at 50% 50%, white, #FEFEFF, #C5FDFC, transparent);
+  z-index:2;
+}
+.light-container {
+  width: 600px;
+  margin: 0 auto;
+  perspective: 8px;
+}
+.light {
+  width: px;
+  height: 100vh;
+  background: #A2E7EE;
+  transform: rotateX(0.5deg);
+  box-shadow: 0px 0px 7px random(8) + px #A2E7EE;
+  display: inline-block;
+  margin-right: (random(7) + 10) +px;
+  opacity: 0.3;
+}
+.light-wide {
+  box-shadow: 0px 0px 7px 8px #A2E7EE;
+}
+.light-far {
+  margin-right: 20px;
+}
+.light-narrow {
+  box-shadow: 0px 0px 3px 2px #A2E7EE;
+}
+.hero-unit {
+  margin: 50px auto 0 auto;
+  width: 300px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  background-color: #eee;
+  border-radius: 6px;
+  padding: 60px;
+  h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+}
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}

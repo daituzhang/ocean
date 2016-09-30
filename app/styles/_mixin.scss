@@ -1,0 +1,129 @@
+@mixin center() {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform: translate3d(-50%, -50%, 0);
+}
+
+@mixin center-x() {
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,0);
+  transform: translate3d(-50%, 0, 0);
+}
+
+@mixin overlap() {
+  position: absolute;
+  left: 0;
+  top: 0;   
+}
+
+@mixin center-y() {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  transform: translate3d(0, -50%, 0);
+}
+
+@mixin triangle-down($size,$color,$top) {
+  content: "";
+  width: 0; 
+  height: 0; 
+  border-left: $size + px solid transparent;
+  border-right: $size + px solid transparent;
+  border-top: $size + px solid $color;
+  position: absolute;
+  right: 12px;
+  top: $top + px;
+  transition: all 1s ease;
+}
+
+@mixin triangle-right($size,$color,$top) {
+  content: "";
+  width: 0; 
+  height: 0; 
+  border-top: $size + px solid transparent;
+  border-bottom: $size + px solid transparent;
+  border-left: $size + px solid $color;
+  position: absolute;
+  right: 12px;
+  top: $top + px;
+  transition: all 1s ease;
+}
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+  ::-webkit-scrollbar {
+      width:  $size;
+      height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+  }
+
+  ::-webkit-scrollbar-track {
+      background: $background-color;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}  
+}
+
+@mixin hoverLine() {
+  transition: all .3s ease;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+//media queries
+@mixin mobile-only {
+  @media only screen and (max-width : $mobile) and (min-device-width : $tablet-device + 1){
+    @content;
+  }
+  @media only screen and (max-device-width : $mobile-device) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media only screen and (min-width : $mobile + 1) and (max-width : $tablet) and (min-device-width : $tablet-device + 1) {
+    @content;
+  }
+  @media only screen and (min-device-width : $mobile-device + 1) and (max-device-width : $tablet-device) {
+    @content;
+  }
+}
+
+@mixin tablet-mobile {
+  @media only screen and (max-width : $tablet) and (min-device-width : $tablet-device + 1) {
+    @content;
+  }
+  @media only screen and (max-device-width : $tablet-device) {
+    @content;
+  }
+}
+
+@mixin desktop-only {
+  @media only screen and (min-width : $tablet + 1) and (min-device-width : $tablet-device + 1) {
+    @content;
+  }
+}
+
+@mixin desktop-tablet {
+  @media only screen and (min-width : $mobile + 1) and (min-device-width : $mobile-device + 1) {
+    @content;
+  }
+}
