@@ -10,32 +10,44 @@ body {
 }
 .top {
   width: 100%;
-  background-color: #17ACC4;
+  background: url('/img/hero_ocean.jpg') #17ACC4;
+  background-size: cover;
   height: 100vh;
+  overflow: visible;
+}
+.middle {
+  width: 100%;
+  background: #0467bf;
+  height: 100vh;
+  z-index: -1;
 }
 .sun {
   position: absolute;
-  top: -150px;
-  width: 600px;
-  height: 300px;
+  top: -300px;
+  width: 800px;
+  height: 600px;
   @include center-x;
-  background-image: radial-gradient(circle 150px at 50% 50%, white, #FEFEFF, #C5FDFC, transparent);
+  background: radial-gradient(circle at 50% 50%, white 0%,white 20%,transparent 60%, transparent 100%);
   z-index:2;
+  //opacity: 0.8
 }
 .light-container {
   width: 600px;
   margin: 0 auto;
-  perspective: 8px;
+  perspective: 3px;
+  overflow:visible;
 }
 .light {
-  width: px;
+  width: 0px;
   height: 100vh;
   background: #A2E7EE;
   transform: rotateX(0.5deg);
-  box-shadow: 0px 0px 7px random(8) + px #A2E7EE;
+  box-shadow: 0px 0px 7px 1px #A2E7EE;
   display: inline-block;
-  margin-right: (random(7) + 10) +px;
-  opacity: 0.3;
+  margin-right: 13px;
+  opacity: 0.2;
+  margin-top: -100px;
+  overflow:visible;
 }
 .light-wide {
   box-shadow: 0px 0px 7px 8px #A2E7EE;
