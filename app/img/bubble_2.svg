@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="887.702px" height="880.719px" viewBox="-5.629 -7.63 887.702 880.719"
+	 enable-background="new -5.629 -7.63 887.702 880.719" xml:space="preserve">
+<filter  id="filter4118" width="1.44959" x="-.2248" y="-.20113" height="1.40227">
+	<feGaussianBlur  stdDeviation="9.9519"></feGaussianBlur>
+</filter>
+<filter  id="filter4104" width="1.17779" x="-.0889" y="-.16939" height="1.33877">
+	<feGaussianBlur  stdDeviation="38.8953"></feGaussianBlur>
+</filter>
+<filter  id="filter4082">
+	<feGaussianBlur  stdDeviation="33.297"></feGaussianBlur>
+</filter>
+<g>
+	<defs>
+		<ellipse id="SVGID_1_" cx="438.22" cy="427.463" rx="443.849" ry="435.093"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<g opacity="0.7531" clip-path="url(#SVGID_2_)" filter="url(#filter4082)" enable-background="new    ">
+		
+			<ellipse fill="none" stroke="#19AEFF" stroke-width="99.9995" stroke-miterlimit="2" cx="438.22" cy="427.463" rx="443.849" ry="435.093"/>
+	</g>
+</g>
+<g>
+	<defs>
+		<ellipse id="SVGID_3_" cx="438.221" cy="437.998" rx="443.851" ry="435.091"/>
+	</defs>
+	<clipPath id="SVGID_4_">
+		<use xlink:href="#SVGID_3_"  overflow="visible"/>
+	</clipPath>
+	
+		<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="-485.0137" y1="747.0059" x2="-469.7622" y2="-402.9943" gradientTransform="matrix(1.3035 0 0 -1.0339 1058.2867 601.3255)">
+		<stop  offset="0" style="stop-color:#19AEFF"/>
+		<stop  offset="1" style="stop-color:#19AEFF;stop-opacity:0"/>
+	</linearGradient>
+	<path opacity="0.4944" clip-path="url(#SVGID_4_)" fill="url(#SVGID_5_)" enable-background="new    " d="M830.333,375.157
+		c0,190.937-176.897,345.722-395.111,345.722S40.11,566.094,40.11,375.157l0,0c0-190.937,176.897-345.722,395.111-345.722
+		S830.333,184.22,830.333,375.157L830.333,375.157z"/>
+</g>
+<g>
+	<defs>
+		<ellipse id="SVGID_6_" cx="438.22" cy="427.463" rx="443.849" ry="435.093"/>
+	</defs>
+	<clipPath id="SVGID_7_">
+		<use xlink:href="#SVGID_6_"  overflow="visible"/>
+	</clipPath>
+	<g opacity="0.7942" clip-path="url(#SVGID_7_)" filter="url(#filter4104)" enable-background="new    ">
+		<path fill="#FFFFFF" d="M368.567,807.763C199.324,775.384,73.697,649.191,47.381,485.13c-8.872-55.309-6.036-62.204,8.458-20.567
+			C94.311,575.079,184.23,655.646,313.08,695.049c38.854,11.883,48.324,12.882,122.085,12.882c73.807,0,83.222-0.995,122.296-12.924
+			c143.135-43.696,238.286-138.881,268.58-268.673l6.588-28.223l-2.047,49.39c-6.855,165.475-117.308,302.343-282.761,350.386
+			C495.432,813.1,418.592,817.332,368.567,807.763L368.567,807.763z"/>
+	</g>
+</g>
+<g filter="url(#filter4118)">
+	<path fill="#FFFFFF" d="M325.838,215.398c-51.1,26.035-145.764,167.238-164.225,161.322
+		c-27.001-8.652-7.221-123.606,11.402-160.527s101.28-98.832,126.596-86.062C324.926,142.899,378.811,188.409,325.838,215.398z"/>
+</g>
+</svg>
