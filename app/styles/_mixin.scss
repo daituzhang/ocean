@@ -26,6 +26,10 @@
   transform: translate3d(0, -50%, 0);
 }
 
+@mixin bubble-margin($ori,$cur) {
+  margin-top : -($cur - $ori)/2 + px;
+  margin-left: -($cur - $ori)/2 + px;
+}
 @mixin triangle-down($size,$color,$top) {
   content: "";
   width: 0; 

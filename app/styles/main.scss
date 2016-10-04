@@ -2,11 +2,27 @@
 // endbower
 
 @import "reset";
+@import "variables";
 @import "mixin";
+@import "grid";
+
+
 body {
-  background: #fafafa;
+  background: $ocean;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #fff;
+  color: $light;
+  line-height: 1.5;
+}
+h3 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+p {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+a {
+  color: $light;
 }
 img {
   max-width: 100%;
@@ -15,15 +31,14 @@ img {
 }
 .top {
   width: 100%;
-  background: url('/img/hero_ocean.jpg') no-repeat #01409d;
+  background: url('/img/hero_ocean.jpg') no-repeat $ocean;
   background-size: cover;
-  background-position: 50% 50%;
+  background-position: 50% 100%;
   height: 100vh;
   overflow: visible;
 }
 .middle {
   width: 100%;
-  background: #01409d;
   //z-index: -1;
   text-align: center;
 }
@@ -46,9 +61,9 @@ img {
 .light {
   width: 0px;
   height: 45vh;
-  background: #A2E7EE;
+  background: $light;
   transform: rotateX(0.5deg);
-  box-shadow: 0px 0px 7px 1px #A2E7EE;
+  box-shadow: 0px 0px 7px 1px $light;
   display: inline-block;
   margin-right: 13px;
   opacity: 0.2;
@@ -57,13 +72,13 @@ img {
   vertical-align: middle;
 }
 .light-wide {
-  box-shadow: 0px 0px 7px 8px #A2E7EE;
+  box-shadow: 0px 0px 7px 8px $light;
 }
 .light-far {
   margin-right: 20px;
 }
 .light-narrow {
-  box-shadow: 0px 0px 3px 2px #A2E7EE;
+  box-shadow: 0px 0px 3px 2px $light;
 }
 .light-long {
   height: 100vh;
@@ -86,8 +101,7 @@ img {
 
 
 .year {
-  height: 20vh;
-  min-height: 400px;
+  height: $year-height;
   width: 100%;
 }
 
@@ -102,22 +116,126 @@ img {
   }
 
 }
-
-
 .bubble-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
   .bubble {
-    width: 50px;
+    width: 60px;
+    opacity: .8;
+    cursor: pointer;
+    transition: all .5s ease;
+    margin:0;
+    .bubble-text {
+      @include center;
+      color: rgba(#fff, .8);
+      transition: all .5s ease;
+      font-size: 20px;
+      white-space:nowrap;
+    }
+    .bubble-img {
+       animation: puff 3s infinite;
+    }
+    span {
+      font-size: 0;
+      transition: all .5s ease;
+      display: inline-block;
+      overflow: hidden;
+    }
+  }
+  .bubble-links {
+    position: absolute;
+    top: 220px;
+    left: 0;
+    transform: rotateY(0deg);
+    background: rgba(#fff, .1);
+    padding: 20px;
+    box-shadow: -5px 0px 30px 0px $light;
+    transition: all 1s ease;
+    margin: 20px;
+    opacity: 0;
+    a {
+      display: block;
+      text-align: left;
+      margin-bottom: 15px;
+      font-size: 20px;
+      color: rgba(#fff, .8);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .bubble-col {
+    height: $year-height;
+    perspective: 50px;
+
+    &:hover {
+      .bubble {
+        width: 180px;
+        @include bubble-margin(60,180);
+      }
+      .bubble-text {
+        font-size: 30px;
+      }
+      span {
+        font-size: 12px;
+      }
+      .bubble-links {
+        opacity: 1;
+      }
+      .links-left {
+        transform: rotateY(2deg);
+      }
+      .links-right {
+        transform: rotateY(-2deg);
+
+      }
+    }
+  }
+
+  #bubble-1 {
+    margin-top: 100px;
+    margin-left: 20%
+  }
+  #bubble-2 {
+    margin-top: 10px;
+  }
+  #bubble-3 {
+    margin-top: 300px;
+    margin-left: 50%;
+  }
+  #bubble-4 {
+    margin-top: 200px;
+    margin-left: 20%;
+  }
+  #bubble-5 {
+    margin-top: 100px;
+    margin-left: 20%;
+  }
+  #bubble-6 {
+    margin-top: 200px;
+    margin-left: 60%;
   }
 }
+.push-right {
+  font-size: 12px;
+  margin-left: 140px;
+  margin-bottom: 30px;
+}
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
+}
+
+@for $i from 1 through 7 {
+  #bubble-#{$i} {
+    .bubble-links {
+      margin-left: -(15 * ( $i - 1)) * 1%;
+      margin-top: -(5 * ( $i - 1)) * 1px;
+    }
+  }
 }
 
 @keyframes wave {
@@ -132,4 +250,10 @@ img {
     40% {left: 75%; top: 25%;}
     80% {left: 60%; top: 10%;}
     100% {left: 50%; top: 20px;}
+}
+
+@keyframes puff {
+    0% {width: 100%}
+    50% {width: 90%}
+    100% {width: 100%}
 }
