@@ -38,11 +38,48 @@ img {
   overflow: visible;
   &:before {
     content: "";
-    @include overlap;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(to right, #000 ,transparent, #000);
+    background: linear-gradient(to right, #000  ,transparent, #000);
+    transition: all 1s ease;
+    opacity: 1;
   }
+  .title {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    top:80vh;
+    color: transparent;
+    transition: all 2s ease;
+    text-shadow: 5px 0 10px transparent;
+  }
+  h1 {
+    font-size: 50px;
+  }
+  &.open {
+    &:before {
+      opacity: 0;
+    }
+    .title {
+      color: rgba($light,0.1);
+      text-shadow: 5px 0 10px rgba($light,0.5);
+    }
+    .sun {
+      width: 800px;
+      height: 600px;
+      top: -300px;
+    }
+    .light {
+      height: 45vh;
+    }
+    .light-long {
+      height: 100vh;
+    }
+  }
+
 }
 .middle {
   width: 100%;
@@ -51,10 +88,11 @@ img {
 }
 .sun {
   position: absolute;
-  top: -300px;
-  width: 800px;
-  height: 600px;
+  top: 0;
+  width: 0;
+  height: 0;
   @include center-x;
+  transition: all 1s ease;
   background: radial-gradient(circle at 50% 50%, white 0%,white 20%,transparent 60%, transparent 100%);
   z-index:2;
   //opacity: 0.8
@@ -67,7 +105,7 @@ img {
 }
 .light {
   width: 0px;
-  height: 45vh;
+  height: 0;
   background: $light;
   transform: rotateX(0.5deg);
   box-shadow: 0px 0px 7px 1px $light;
@@ -77,6 +115,7 @@ img {
   margin-top: -100px;
   overflow: visible;
   vertical-align: middle;
+  transition: height 2s .5s ease;
 }
 .light-wide {
   box-shadow: 0px 0px 7px 8px $light;
@@ -88,7 +127,7 @@ img {
   box-shadow: 0px 0px 3px 2px $light;
 }
 .light-long {
-  height: 100vh;
+  height: 0;
 }
 .hero-unit {
   margin: 50px auto 0 auto;
