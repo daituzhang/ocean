@@ -3,7 +3,7 @@ $( document ).ready(function(){
 		$('.top').addClass('show');
 	//}, 1000);
 	canvas();
-	
+	scroll();
 })
 function scroll(){
 	var lastScrollTop = 0;
@@ -22,7 +22,8 @@ function scroll(){
         if(scroll.cs > scroll.ls){
         	scroll.direct = "down";
         	$(".scroll-event").not(".show").each(function() {
-            	if($(this).offset().top  < scroll.csb + 50) {
+            	if($(this).offset().top  < scroll.csb -100) {
+            		console.log($(this).offset().top, scroll.csb);
             		$(this).addClass("show");
             	} 
             	
@@ -31,7 +32,7 @@ function scroll(){
         else {
         	scroll.direct = "up"; 
         	$(".scroll-event.show").each(function() {
-            	if($(this).offset().top  > scroll.csb + 50) {
+            	if($(this).offset().top  > scroll.csb -100) {
             		$(this).removeClass("show");
             	}
     		});
@@ -53,7 +54,7 @@ function canvas(){
 	function particle() {
 	  this.x = Math.random() * canvas.width;
 	  this.y = canvas.height + Math.random() * 300;
-	  this.speed = 0.6 + Math.random();
+	  this.speed = 0.3 + Math.random()/5;
 	  this.radius = Math.random()*3;
 	  this.opacity = (Math.random() * 100) / 1000;
 	}

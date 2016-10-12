@@ -159,7 +159,19 @@ img {
 
 .year {
   height: $year-height;
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
+  transition: all 2s ease;
+  transform: translate3d(0,200px,0);
+  opacity: 0;
+  p {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  &.show {
+    transform: translate3d(0,0,0);
+    opacity: 1;
+  }
 }
 
 .fish {
@@ -174,7 +186,7 @@ img {
 
 }
 .bubble-container {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   .bubble {
     width: 60px;
@@ -293,6 +305,18 @@ img {
       margin-top: -(5 * ( $i - 1)) * 1px;
     }
   }
+}
+
+@for $i from 1 through 25 {
+  .light:nth-child(#{$i}):not(.light-long) {
+    animation: flash (2+random(10)/10) +s random(10)/10+s  infinite;
+  }
+}
+
+@keyframes flash {
+  0% {opacity: 0}
+  50% {opacity: .2}
+  100% {opacity: 0}
 }
 
 @keyframes wave {
