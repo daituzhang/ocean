@@ -27,12 +27,13 @@ function bubble() {
 		};
 		console.log(bubble, center);
 		$(this).css({
-			'transform:': 'translate('+ center.x + 'px,' + center.y + 'px', 
-			'-webkit-transform' : 'translate('+ center.x + 'px,' + center.y + 'px', 
+			'transform:': 'translate('+ center.x + 'px,' + center.y + 'px)', 
+			'-webkit-transform' : 'translate('+ center.x + 'px,' + center.y + 'px)', 
 			'width': bubble.radius
 		});
 	});
 	$('.gray').click(function () {
+		$('.bubble.active').removeAttr('style');
 		$('.bubble.active').removeClass('active');
 		$('.gray').removeClass('active');
 	});
