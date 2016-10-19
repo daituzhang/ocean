@@ -16,14 +16,14 @@ body {
   overflow-x: hidden;
 }
 .gray {
-  background: rgba(#000,.9);
+  background: rgba(#000,.95);
   position: fixed;
   top: 0;
   left: 0;
   opacity: 0;
   width: 100%;
   height: 100vh;
-  transition: all .5s ease;
+  transition: all 1s ease;
   z-index: -1;
   &.active {
     z-index: 8;
@@ -188,6 +188,9 @@ img {
   &.show {
     margin-top: 0;
     opacity: 1;
+    .bubble-container {
+      margin-top: 0;
+    }
   }
 }
 
@@ -204,17 +207,19 @@ img {
 }
 .bubble-container {
   width: 100%;
-  margin: 0 auto;
+  margin: 2000px auto 0;
+  transition: all 2s ease;
   .bubble {
     width: 60px;
     opacity: .8;
     cursor: pointer;
-    transition: all .5s ease;
+    transition: all 1s ease;
     margin:0;
+    text-align: center;
     .bubble-text {
       @include center;
       color: rgba(#fff, .8);
-      transition: all .5s ease;
+      transition: all 1s ease;
       font-size: 20px;
       white-space:nowrap;
     }
@@ -230,28 +235,50 @@ img {
     &.active {
       z-index: 9;
       margin: 0 auto;
+      opacity: 1;
+      .bubble-text {
+        font-size: 30px;
+      }
+      .bubble-text span {
+        font-size: 30px;
+        display: inline;
+      }
       .bubble-img {
         animation: none;
         width: 100%;
       }
+      .bubble-links {
+        margin: 30px auto;
+        opacity: 1;
+        width: 90%;
+        max-height: 300px;
+        white-space: normal;
+        a {
+          font-size: 26px;
+          margin-bottom: 20px;
+        }
+      }
     }
   }
   .bubble-links {
-    position: absolute;
-    top: 220px;
-    left: 0;
-    transform: rotateY(0deg);
-    background: rgba(#fff, .1);
-    padding: 20px;
-    box-shadow: -5px 0px 30px 0px $light;
+    //position: absolute;
+    //top: 220px;
+    //left: 0;
+    //transform: rotateY(0deg);
+    //background: rgba(#fff, .1);
+    //padding: 20px;
+    //box-shadow: -5px 0px 30px 0px $light;
     transition: all 1s ease;
-    margin: 20px;
+    //margin: 20px;
+    margin: 0;
+    padding: 0;
     opacity: 0;
+    max-height:0;
     a {
+      transition: all 1s ease;
       display: block;
-      text-align: left;
-      margin-bottom: 15px;
-      font-size: 16px;
+     // margin-bottom: 15px;
+      font-size: 0px;
       color: rgba(#fff, .8);
       &:hover {
         text-decoration: underline;
@@ -264,13 +291,14 @@ img {
       .bubble:not(.active) {
         width: 180px;
         @include bubble-margin(60,180);
+        .bubble-text {
+          font-size: 30px;
+        }
+        span {
+          font-size: 12px;
+        }
       }
-      .bubble-text {
-        font-size: 30px;
-      }
-      span {
-        font-size: 12px;
-      }
+      
       // .bubble-links {
       //   opacity: 1;
       // }
@@ -326,18 +354,29 @@ img {
   padding: 0.2em 0;
 }
 
-@for $i from 1 through 7 {
-  #bubble-#{$i} {
-    .bubble-links {
-      margin-left: -(15 * ( $i - 1)) * 1%;
-      margin-top: -(5 * ( $i - 1)) * 1px;
-    }
-  }
-}
+// @for $i from 1 through 7 {
+//   #bubble-#{$i} {
+//     .bubble-links {
+//       margin-left: -(15 * ( $i - 1)) * 1%;
+//       margin-top: -(5 * ( $i - 1)) * 1px;
+//     }
+//   }
+// }
 
 @for $i from 1 through 25 {
   .light.flash:nth-child(#{$i}):not(.light-long) {
     animation: flash (2+random(10)/10) +s random(10)/10+s  infinite;
+  }
+}
+
+@for $i from 1 through 5 {
+  .year:nth-child(#{$i}) {
+    @for $j from 1 through 7 {
+      .bubble-col:nth-child(#{$j}) .bubble-outter {
+        margin-top: random(400) + px;
+        margin-left: (20 + random(40)) + %;
+      }
+    }
   }
 }
 

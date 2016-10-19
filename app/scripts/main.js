@@ -11,8 +11,7 @@ $(document).ready(function () {
 });
 
 function bubble() {
-	$('.bubble:not(.active)').click(function () {
-		console.log('s');
+	$('.year').on('click','.bubble:not(.active)' , function () {
 		$(this).addClass('active');
 		$('.gray').addClass('active');
 		var bubble = {
@@ -32,11 +31,18 @@ function bubble() {
 			'width': bubble.radius
 		});
 	});
-	$('.gray').click(function () {
+	$('.year').on('click','.gray,.bubble.active', function () {
+		console.log('active');
 		$('.bubble.active').removeAttr('style');
 		$('.bubble.active').removeClass('active');
 		$('.gray').removeClass('active');
 	});
+	$('.year').on('click','.bubble.active .bubble-text', function (e) {
+		return false;
+		console.log('hey');
+		e.preventDefault();
+	});
+
 }
 
 function scroll() {
